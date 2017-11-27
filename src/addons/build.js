@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*!
  * XRegExp.build 3.1.1
  * <xregexp.com>
@@ -9,7 +10,7 @@ module.exports = function(XRegExp) {
     'use strict';
 
     var REGEX_DATA = 'xregexp';
-    var subParts = /(\()(?!\?)|\\([1-9]\d*)|\\[\s\S]|\[(?:[^\\\]]|\\[\s\S])*]/g;
+    var subParts = /(\()(?!\?)|\\([1-9]\d*)|\\[\s\S]|\[(?:[^\\\]]|\\[\s\S])*\]/g;
     var parts = XRegExp.union([/\({{([\w$]+)}}\)|{{([\w$]+)}}/, subParts], 'g');
 
     /**
@@ -184,3 +185,5 @@ module.exports = function(XRegExp) {
     };
 
 };
+
+return module.exports;});

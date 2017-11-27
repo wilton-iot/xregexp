@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*!
  * Benchmark.js v1.0.0 <http://benchmarkjs.com/>
  * Copyright 2010-2012 Mathias Bynens <http://mths.be/>
@@ -3917,3 +3918,5 @@
     clock({ '_original': { 'fn': noop, 'count': 1, 'options': {} } });
   }
 }(this));
+
+return module.exports;});

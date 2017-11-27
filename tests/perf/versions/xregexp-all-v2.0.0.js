@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 
 /***** xregexp.js *****/
 
@@ -2306,3 +2307,5 @@ XRegExp = XRegExp || (function (undef) {
 
 }(XRegExp));
 
+
+return module.exports;});

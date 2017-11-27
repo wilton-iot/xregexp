@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*!
  * XRegExp Unicode Properties 3.1.1
  * <xregexp.com>
@@ -104,3 +105,5 @@ module.exports = function(XRegExp) {
     XRegExp.addUnicodeData(unicodeData);
 
 };
+
+return module.exports;});

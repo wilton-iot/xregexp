@@ -1,3 +1,10 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+
+var describe = require("tape-compat").describe;
+var expect = require("tape-compat").expect;
+var it = require("tape-compat").it;
+var XRegExp = require("xregexp");
+
 describe('XRegExp.build addon:', function() {
 
     describe('XRegExp.build()', function() {
@@ -93,3 +100,5 @@ describe('XRegExp.build addon:', function() {
     });
 
 });
+
+return module.exports;});

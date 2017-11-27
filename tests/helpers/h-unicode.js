@@ -1,3 +1,7 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+
+var expect = require("tape-compat").expect;
+var XRegExp = require("xregexp");
 /*
  * Runs a series of `expect` assertions, given a Unicode token name and arrays of code points that
  * should or should not be matched.
@@ -44,67 +48,6 @@ function testUnicodeToken(name, options) {
     }
 }
 
+exports.testUnicodeToken = testUnicodeToken;
 
-/*!
- * ES6 Unicode Shims 0.1
- * Steven Levithan (c) 2012 MIT License
- */
-
-/**
- * Returns a string created using the specified sequence of Unicode code points. Accepts integers
- * between 0 and 0x10FFFF. Code points above 0xFFFF are converted to surrogate pairs. If a provided
- * integer is in the surrogate range, it produces an unpaired surrogate. Comes from accepted ES6
- * proposals.
- * @memberOf String
- * @param {Number} cp1, cp2... Sequence of Unicode code points.
- * @returns {String} String created from the specified code points.
- * @example
- *
- * // Basic use
- * String.fromCodePoint(0x41); // -> 'A'
- *
- * // Multiple code points; returns astral characters as surrogate pairs
- * String.fromCodePoint(0x20B20, 0x28B4E, 0x29DF6);
- * // Unlike String.fromCharCode, this correctly handles code points above 0xFFFF
- */
-if (!String.fromCodePoint) {
-    String.fromCodePoint = function () {
-        var chars = [], point, offset, units, i;
-        for (i = 0; i < arguments.length; ++i) {
-            point = arguments[i];
-            offset = point - 0x10000;
-            units = point > 0xFFFF ? [0xD800 + (offset >> 10), 0xDC00 + (offset & 0x3FF)] : [point];
-            chars.push(String.fromCharCode.apply(null, units));
-        }
-        return chars.join("");
-    };
-}
-
-/**
- * Returns the numeric Unicode code point of the character at the given index. Here `pos` is the
- * code *unit* position. If it's the second surrogate of a pair or an unpaired starting surrogate,
- * the code unit of the surrogate is returned; otherwise the code point is derived from the
- * surrogate pair. Comes from accepted ES6 proposals.
- * @memberOf String.prototype
- * @param {Number} [pos=0] Code point index in the string. Defaults to `0` if not a number.
- * @returns {Number} Code point at the specified index. `NaN` if the index is less than `0` or
- *   greater than the string length.
- * @example
- *
- * var str = String.fromCodePoint(166734);
- * str.codePointAt(0); // -> 166734
- * // Unlike the charCodeAt method, this correctly handles code points above 0xFFFF
- */
-/*if (!String.prototype.codePointAt) {
-    String.prototype.codePointAt = function (pos) {
-        pos = isNaN(pos) ? 0 : pos;
-        var str = String(this),
-            code = str.charCodeAt(pos),
-            next = str.charCodeAt(pos + 1);
-        // If a surrogate pair
-        if (0xD800 <= code && code <= 0xDBFF && 0xDC00 <= next && next <= 0xDFFF) {
-            return ((code - 0xD800) * 0x400) + (next - 0xDC00) + 0x10000;
-        }
-        return code;
-    };
-}*/
+return module.exports;});

@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 [
         {
             name: 'Ahom',
@@ -533,3 +534,5 @@
             bmp: '\uA000-\uA48C\uA490-\uA4C6'
         }
 ]
+
+return module.exports;});

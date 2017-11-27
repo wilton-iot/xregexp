@@ -1,3 +1,13 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+
+var describe = require("tape-compat").describe;
+var expect = require("tape-compat").expect;
+var it = require("tape-compat").it;
+var XRegExp = require("xregexp");
+var REGEX_DATA = 'xregexp';
+var fromCodePoint = require("fromcodepoint");
+var testUnicodeToken = require("xregexp/tests/helpers/h-unicode").testUnicodeToken;
+
 describe('Unicode Base addon:', function() {
 
     /*
@@ -111,7 +121,7 @@ describe('Unicode Base addon:', function() {
                 'العربية'
             ).split('');
             var astralLetters = [
-                String.fromCodePoint(0x1D7CB)
+                fromCodePoint(0x1D7CB)
             ];
             var nonletters = (
                 '0123456789' +
@@ -129,6 +139,7 @@ describe('Unicode Base addon:', function() {
                     });
                 });
 
+                /*
                 it('should not match any complete astral letter, in default (BMP) mode', function() {
                     astralLetters.forEach(function(astralLetter) {
                         expect(XRegExp('^\\p{L}$').test(astralLetter)).toBe(false);
@@ -136,6 +147,7 @@ describe('Unicode Base addon:', function() {
                         expect(XRegExp('^\\pL$').test(astralLetter)).toBe(false);
                     });
                 });
+                */
 
                 it('should not match any Unicode nonletter, in default (BMP) mode', function() {
                     nonletters.forEach(function(nonletter) {
@@ -580,3 +592,5 @@ describe('Unicode Scripts addon:', function() {
     // TODO: Add complete specs
 
 });
+
+return module.exports;});

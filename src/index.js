@@ -1,11 +1,14 @@
-var XRegExp = require('./xregexp');
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+var XRegExp = require('xregexp/src/xregexp');
 
-require('./addons/build')(XRegExp);
-require('./addons/matchrecursive')(XRegExp);
-require('./addons/unicode-base')(XRegExp);
-require('./addons/unicode-blocks')(XRegExp);
-require('./addons/unicode-categories')(XRegExp);
-require('./addons/unicode-properties')(XRegExp);
-require('./addons/unicode-scripts')(XRegExp);
+require('xregexp/src/addons/build')(XRegExp);
+require('xregexp/src/addons/matchrecursive')(XRegExp);
+require('xregexp/src/addons/unicode-base')(XRegExp);
+require('xregexp/src/addons/unicode-blocks')(XRegExp);
+require('xregexp/src/addons/unicode-categories')(XRegExp);
+require('xregexp/src/addons/unicode-properties')(XRegExp);
+require('xregexp/src/addons/unicode-scripts')(XRegExp);
 
 module.exports = XRegExp;
+
+return module.exports;});

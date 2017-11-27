@@ -24,5 +24,12 @@
   },
   "devDependencies": {
     "browserify": "^12.0.1"
+  },
+  "wilton": {
+    "excludes": [
+      "tests",
+      "tools",
+      "xregexp-all.js"
+    ]
   }
 }

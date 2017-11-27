@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 beforeEach(function() {
     jasmine.addMatchers({
         // Similar to toEqual with arrays, but ignores custom properties of arrays. Useful when
@@ -31,3 +32,5 @@ beforeEach(function() {
         }
     });
 });
+
+return module.exports;});

@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.XRegExp = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*!
  * XRegExp.build 3.1.1
@@ -2592,19 +2593,19 @@ module.exports = function(XRegExp) {
 };
 
 },{}],8:[function(require,module,exports){
-var XRegExp = require('./xregexp');
+var XRegExp = require('xregexp/xregexp');
 
-require('./addons/build')(XRegExp);
-require('./addons/matchrecursive')(XRegExp);
-require('./addons/unicode-base')(XRegExp);
-require('./addons/unicode-blocks')(XRegExp);
-require('./addons/unicode-categories')(XRegExp);
-require('./addons/unicode-properties')(XRegExp);
-require('./addons/unicode-scripts')(XRegExp);
+require('xregexp/addons/build')(XRegExp);
+require('xregexp/addons/matchrecursive')(XRegExp);
+require('xregexp/addons/unicode-base')(XRegExp);
+require('xregexp/addons/unicode-blocks')(XRegExp);
+require('xregexp/addons/unicode-categories')(XRegExp);
+require('xregexp/addons/unicode-properties')(XRegExp);
+require('xregexp/addons/unicode-scripts')(XRegExp);
 
 module.exports = XRegExp;
 
-},{"./addons/build":1,"./addons/matchrecursive":2,"./addons/unicode-base":3,"./addons/unicode-blocks":4,"./addons/unicode-categories":5,"./addons/unicode-properties":6,"./addons/unicode-scripts":7,"./xregexp":9}],9:[function(require,module,exports){
+},{"xregexp/addons/build":1,"xregexp/addons/matchrecursive":2,"xregexp/addons/unicode-base":3,"xregexp/addons/unicode-blocks":4,"xregexp/addons/unicode-categories":5,"xregexp/addons/unicode-properties":6,"xregexp/addons/unicode-scripts":7,"xregexp/xregexp":9}],9:[function(require,module,exports){
 /*!
  * XRegExp 3.1.1
  * <xregexp.com>
@@ -4442,3 +4443,5 @@ module.exports = XRegExp;
 
 },{}]},{},[8])(8)
 });
+
+return module.exports;});

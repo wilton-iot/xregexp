@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*!
  * XRegExp-All 3.0.0
  * <http://xregexp.com/>
@@ -4485,3 +4486,5 @@ return XRegExp;
 
 }));
 
+
+return module.exports;});

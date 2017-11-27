@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 [
         {
             name: 'InAegean_Numbers',
@@ -1048,3 +1049,5 @@
             bmp: '\u4DC0-\u4DFF'
         }
 ]
+
+return module.exports;});

@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 
 /***** xregexp.js *****/
 
@@ -1295,3 +1296,5 @@ XRegExp.matchRecursive = function (str, left, right, flags, options) {
     return output;
 };
 
+
+return module.exports;});

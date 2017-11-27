@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*
 Copyright (c) 2008-2015 Pivotal Labs
 
@@ -3296,3 +3297,5 @@ getJasmineRequireObj().interface = function(jasmine, env) {
 getJasmineRequireObj().version = function() {
   return '2.3.4';
 };
+
+return module.exports;});

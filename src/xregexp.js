@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*!
  * XRegExp 3.1.1
  * <xregexp.com>
@@ -72,9 +73,11 @@ function hasNativeFlag(flag) {
     } catch (exception) {
         isSupported = false;
     }
+    // https://github.com/babel/babel/issues/904#issuecomment-76311422
     if (isSupported && flag === 'y') {
         // Work around Safari 9.1.1 bug
-        return new RegExp('aa|.', 'y').test('b');
+        // return new RegExp('aa|.', 'y').test('b');
+        return false;
     }
     return isSupported;
 }
@@ -1305,7 +1308,7 @@ XRegExp.union = function(patterns, flags) {
         throw new TypeError('Must provide a nonempty array of patterns to merge');
     }
 
-    var parts = /(\()(?!\?)|\\([1-9]\d*)|\\[\s\S]|\[(?:[^\\\]]|\\[\s\S])*]/g;
+    var parts = /(\()(?!\?)|\\([1-9]\d*)|\\[\s\S]|\[(?:[^\\\]]|\\[\s\S])*\]/g;
     var output = [];
     var pattern;
     for (var i = 0; i < patterns.length; ++i) {
@@ -1682,7 +1685,7 @@ XRegExp.addToken(
  * character class endings can't be determined.
  */
 XRegExp.addToken(
-    /\[(\^?)]/,
+    /\[(\^?)\]/,
     function(match) {
         // For cross-browser compatibility with ES3, convert [] to \b\B and [^] to [\s\S].
         // (?!) should work like \b\B, but is unreliable in some versions of Firefox
@@ -1832,3 +1835,5 @@ XRegExp.addToken(
 );
 
 module.exports = XRegExp;
+
+return module.exports;});

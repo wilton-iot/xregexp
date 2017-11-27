@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 [
         {
             name: 'C',
@@ -208,3 +209,5 @@
             bmp: '\x20\xA0\u1680\u2000-\u200A\u202F\u205F\u3000'
         }
 ]
+
+return module.exports;});

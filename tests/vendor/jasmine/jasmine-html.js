@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 /*
 Copyright (c) 2008-2015 Pivotal Labs
 
@@ -444,3 +445,5 @@ jasmineRequire.QueryString = function() {
 
   return QueryString;
 };
+
+return module.exports;});

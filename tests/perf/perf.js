@@ -1,3 +1,4 @@
+define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
 (function() {
     var outputBox = document.getElementById('log');
     var suites = [];
@@ -339,3 +340,5 @@
         );
     }());
 }());
+
+return module.exports;});
