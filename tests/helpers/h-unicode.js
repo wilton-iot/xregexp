@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 
 var expect = require("tape-compat").expect;
 var XRegExp = require("xregexp");
@@ -50,4 +50,4 @@ function testUnicodeToken(name, options) {
 
 exports.testUnicodeToken = testUnicodeToken;
 
-return module.exports;});
+require = requireOrig;});

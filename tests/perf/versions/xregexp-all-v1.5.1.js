@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 
 /***** xregexp.js *****/
 
@@ -1297,4 +1297,4 @@ XRegExp.matchRecursive = function (str, left, right, flags, options) {
 };
 
 
-return module.exports;});
+require = requireOrig;});

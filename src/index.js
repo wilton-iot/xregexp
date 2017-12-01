@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 var XRegExp = require('xregexp/src/xregexp');
 
 require('xregexp/src/addons/build')(XRegExp);
@@ -11,4 +11,4 @@ require('xregexp/src/addons/unicode-scripts')(XRegExp);
 
 module.exports = XRegExp;
 
-return module.exports;});
+require = requireOrig;});

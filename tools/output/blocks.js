@@ -1,4 +1,4 @@
-define(function(){var require = WILTON_requiresync;var module = {exports: {}};var exports = module.exports;
+define(function(localRequire, exports, module) { var requireOrig = require; require = localRequire;
 [
         {
             name: 'InAegean_Numbers',
@@ -1050,4 +1050,4 @@ define(function(){var require = WILTON_requiresync;var module = {exports: {}};va
         }
 ]
 
-return module.exports;});
+require = requireOrig;});
