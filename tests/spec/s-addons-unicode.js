@@ -265,7 +265,7 @@ describe('Unicode Base addon:', function() {
     describe('adds new regex flag A:', function() {
 
         (function() {
-            var U_1D7CB = String.fromCodePoint(0x1D7CB);
+            var U_1D7CB = fromCodePoint(0x1D7CB);
 
             it('should match any astral letter with \\p{L} when using inline flag (?A)', function() {
                 expect(XRegExp('(?A)^\\p{L}$').test(U_1D7CB)).toBe(true);
@@ -434,7 +434,7 @@ describe('Unicode Blocks addon:', function() {
     it('should handle astral-only \\p{InAegean_Numbers}', function() {
         testUnicodeToken('InAegean_Numbers', {
             isAstralOnly: true,
-            valid: [String.fromCodePoint(0x10100)]
+            valid: [fromCodePoint(0x10100)]
         });
     });
 
@@ -460,7 +460,7 @@ describe('Unicode Categories addon:', function() {
 
     it('should handle \\p{Ll}', function() {
         testUnicodeToken('Ll', {
-            valid: ['a', 'и', 'ᾀ', 'ǉ', String.fromCodePoint(0x1D7CB)],
+            valid: ['a', 'и', 'ᾀ', 'ǉ', fromCodePoint(0x1D7CB)],
             invalid: ['A', 'И', '!']
         });
 
@@ -501,7 +501,7 @@ describe('Unicode Categories addon:', function() {
 
     it('should handle \\p{S}', function() {
         testUnicodeToken('S', {
-            valid: ['$', '\u20B9', '\u20BA', String.fromCodePoint(0x1F4A9)],
+            valid: ['$', '\u20B9', '\u20BA', fromCodePoint(0x1F4A9)],
             invalid: ['0']
         });
     });
@@ -536,7 +536,7 @@ describe('Unicode Properties addon:', function() {
 
     it('should handle \\p{Any}', function() {
         testUnicodeToken('Any', {
-            valid: [String.fromCodePoint(0x10000), '\uD800', '\uDC00', 'A']
+            valid: [fromCodePoint(0x10000), '\uD800', '\uDC00', 'A']
         });
     });
 
@@ -549,7 +549,7 @@ describe('Unicode Properties addon:', function() {
 
     it('should handle \\p{Assigned}', function() {
         testUnicodeToken('Assigned', {
-            valid: [String.fromCodePoint(0x10000), '\uD800', '\uDC00', 'A', '\u20BA']
+            valid: [fromCodePoint(0x10000), '\uD800', '\uDC00', 'A', '\u20BA']
         });
     });
 

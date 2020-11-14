@@ -29,7 +29,8 @@
     "excludes": [
       "tests",
       "tools",
-      "xregexp-all.js"
+      "xregexp-all.js",
+      "test.js"
     ]
   }
 }
